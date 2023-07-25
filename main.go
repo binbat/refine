@@ -36,6 +36,7 @@ func main() {
 		cmd := exec.Command(script)
 		stdoutStderr, err := cmd.CombinedOutput()
 		if err != nil {
+			log.Printf("%s", stdoutStderr)
 			log.Panic(err)
 		}
 		w.Write(stdoutStderr)
